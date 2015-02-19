@@ -1,3 +1,6 @@
+<% if @message %>
+  <h2><font color="red"><%= @message %></font></h2>
+<% end %>
 
 <form action ="/name" method='post'>
       What's your name?
@@ -8,8 +11,3 @@
 <% if @message %>
   <h2><font color="red"><%= @message %></font></h2>
 <% end %>
-
-<img src='/images/player1.jpg' height='625' width='1100'>
-
-
-

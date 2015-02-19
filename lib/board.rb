@@ -39,4 +39,10 @@ class Board
     !ship_cells.map(&:content).all?(&:sunk?)
   end
 
+  def convert_to_array
+    self.grid.values.map{|cell| cell.content.representation}.each_slice(3).map{|row| row}
+  end
+
+
+
 end

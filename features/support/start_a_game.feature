@@ -6,16 +6,13 @@ Feature: Starting the game
   Scenario: Registering
     Given I am on the homepage
     When I follow "New Game"
-    Then I should see "What's your name?"
+    And I should see "What's your name?"
     And I should be able to enter my name
+    Then I should see the grid
 
-
-Feature: Not adding a name
-  In order to play battleships
-  As the player one
-  I want to add my name
 
   Scenario: No Name
-    Given I am on the "New Game" page
-    When I enter my name
-    Then
+    Given I am on the "Name" page
+    When I don't enter my name
+    Then I see "Please enter your name"
+

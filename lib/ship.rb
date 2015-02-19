@@ -23,6 +23,10 @@ class Ship
 		hits >= length
 	end
 
+		def representation
+		:S
+	end
+
 	alias_method :size, :length
 
 private
@@ -30,6 +34,7 @@ private
 	def hits
 		@hits
 	end
+
 
 
 
