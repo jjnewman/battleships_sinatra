@@ -18,7 +18,7 @@ class Board
 
   def place(ship, coordinate, orientation = :horizontally)
     get_coordinates(coordinate, ship.size, orientation).each do |coord|
-      grid[coord].content = ship
+      grid[coord] = ship
     end
   end
 
@@ -40,7 +40,7 @@ class Board
   end
 
   def convert_to_array
-    self.grid.values.map{|cell| cell.content.representation}.each_slice(3).map{|row| row}
+    self.grid.values.map{|cell| cell.representation}.each_slice(3).map{|row| row}
   end
 
 

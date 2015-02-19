@@ -13,11 +13,12 @@ class Battleships < Sinatra::Base
 
 
   # board = Array.new(2) {Array.new(2) {'~'}
-  board = Board.new(size: 3, content: Cell)
+  board = Board.new(size: 3, content: Water)
   ship = Ship.submarine
   game = Game.new
-  water = Water.new
   cell = Cell.new
+
+
 
 
    get '/' do
@@ -36,21 +37,22 @@ class Battleships < Sinatra::Base
       @message = 'please enter your name'
       erb :name
     else
-      # player = Player.new(params[:name])
-      # player.board = Board.new
-      # game.add_player(player)
+      player = Player.new(params[:name])
+      player.board
+      game.add_player(player)
       redirect '/new_game'
     end
   end
 
 
   get '/new_game' do
-    @seed_data = board.convert_to_array
     board.place(ship, :A1)
+    @seed_data = board.convert_to_array
     erb :new_game
   end
 
    post '/new_game' do
+    board.shoot_at(params[:coord])
     redirect '/new_game'
   end
 
