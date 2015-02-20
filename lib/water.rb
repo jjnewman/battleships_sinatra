@@ -1,5 +1,9 @@
 class Water
 
+  def initialize
+    @hit = false
+  end
+
   def hit
     "splash"
   end

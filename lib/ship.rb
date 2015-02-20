@@ -24,7 +24,11 @@ class Ship
 	end
 
 		def representation
-		:S
+			if @hits >= 1
+				:H
+			else
+				:S
+			end
 	end
 
 	alias_method :size, :length
