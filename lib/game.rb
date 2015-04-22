@@ -2,9 +2,6 @@ class Game
 
   attr_reader :player_one, :player_two, :turn
 
-  def initialize
-  end
-
   def add_player(player)
     @player_one ? @player_two = player : @player_one = player
     @turn = player_one
@@ -18,7 +15,6 @@ class Game
     turn == player_one ? player_two : player_one
   end
 
-
   def take_turn(coordinate)
     raise 'Game is over.' if over?
     opponent.receive_shot(coordinate)
@@ -28,5 +24,4 @@ class Game
   def over?
     player_one.lost? or player_two.lost?
   end
-
 end
