@@ -21,6 +21,5 @@ describe Cell do
     cell.content = ship
     expect(ship).to receive(:hit)
     cell.shoot
-
   end
 end
