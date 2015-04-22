@@ -1,4 +1,3 @@
-
 Given(/^I am on the homepage$/) do
   visit('/')
 end
@@ -18,8 +17,6 @@ end
 Then(/^I should see the grid$/) do
   visit('/start_game')
 end
-
-
 
 Given(/^I am on the "(.*?)" page$/) do |name_page|
   visit('/name')
