@@ -1,8 +1,6 @@
 <H2> Here is your board </H2>
 
 <table border="2" width="250" cellpadding="10" cellspacing="5" bgcolor="#efefef">
-
-
     <th> </th>
     <% @seed_data.each.with_index(1) do |row,index| %>
         <th><%= (index + 64).chr %></th>
