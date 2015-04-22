@@ -15,5 +15,4 @@ class Cell
   def hit?
     @hit
   end
-
 end
