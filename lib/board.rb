@@ -5,8 +5,8 @@ class Board
 
 	def initialize(options)
 		@grid = {}
-    size = options[:size]
-		("A"..(size + 64).chr).each do |letter|
+    	size = options[:size]
+			("A"..(size + 64).chr).each do |letter|
 			(1..size).each do |number|
 				@grid[(letter + number.to_s).to_sym] = options[:content].new
 			end
@@ -20,7 +20,7 @@ class Board
 
   def place(ship, coordinate, orientation = :horizontally)
     get_coordinates(coordinate, ship.size, orientation).each do |coord|
-      grid[coord].content = ship
+    	grid[coord].content = ship
     end
   end
 
@@ -44,7 +44,4 @@ class Board
   def convert_to_array
     self.grid.values.map{|cell| cell.content.representation}.each_slice(3).map{|row| row}
   end
-
-
-
 end
