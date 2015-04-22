@@ -1,25 +1,22 @@
 <H2> Here is your board </H2>
 
 <table border="2" width="250" cellpadding="10" cellspacing="5" bgcolor="#efefef">
-    <th> </th>
-    <% @seed_data.each.with_index(1) do |row,index| %>
-        <th><%= (index + 64).chr %></th>
-    <% end %>
-    <% @seed_data.each.with_index(1) do |row,index| %>
+  <th> </th>
+  <% @seed_data.each.with_index(1) do |row,index| %>
+    <th><%= (index + 64).chr %></th>
+  <% end %>
+  <% @seed_data.each.with_index(1) do |row,index| %>
     <tr>
-        <th><%= index %></th>
-        <% row.each do |content| %>
-          <td><%= content %></td>
-        <% end %>
-    </tr>
+    <th><%= index %></th>
+    <% row.each do |content| %>
+      <td><%= content %></td>
     <% end %>
+    </tr>
+  <% end %>
 </table>
 
-</br>
-</br>
-
 <form action ="/new_game" method='post'>
-      Where do you want to send your missiles?
-      <input type="text" name="coord">
-      <input type="submit" id="shoot">
+  Where do you want to send your missiles?
+  <input type="text" name="coord">
+  <input type="submit" id="shoot">
 </form>
